@@ -1,0 +1,15 @@
+{% extends 'AppCoder/padre.html' %}
+
+{% load static %}
+
+{% block titulo %} ESTA ES LA PAGINA DE RESULTADOS DE BUSQUEDA POR DNI{% endblock %}
+
+{% block contenido_que_cambia %}
+    <h1>RESULTADOS DE BUSQUEDA!</h1>
+    {% for medico in medicos %}
+
+        <h3>{{medico.nombre}} - {{medico.dni}}</h3>
+    {% endfor %}
+
+
+{% endblock %}

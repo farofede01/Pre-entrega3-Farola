@@ -1,0 +1,17 @@
+{% extends 'AppCoder/padre.html' %}
+
+{% load static %}
+
+{% block titulo %} ESTE ES UN FORMULARIO DE CARGA DE MEDICOS{% endblock %}
+
+{% block contenido_que_cambia %}
+    <h2>FORMULARIO</h2>
+    <form action = "{% url "Medicos" %}"  method = "POST">{% csrf_token %} 
+        {{ formulario.as_p}}
+        <input type ="submit", value = "GUARDAR MEDICO">
+    
+    </form>
+
+    <h3> {{mensaje}} </h3>
+
+{% endblock %}

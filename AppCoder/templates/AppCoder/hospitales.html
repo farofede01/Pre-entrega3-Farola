@@ -1,0 +1,19 @@
+{% extends 'AppCoder/padre.html' %} 
+
+{% load static %}
+
+{% block titulo %} ESTA ES LA PAGINA DE HOSPITALES{% endblock %}
+
+{% block contenido_que_cambia %}
+<h1> HOSPITALES</h1>
+<h2>FORMULARIO</h2>
+    <form action = "{% url "Hospitales" %}"  method = "POST">{% csrf_token %} 
+        {{ formulario.as_p}}
+        <input type ="submit", value = "GUARDAR HOSPITAL">
+    
+    </form>
+
+    <h3> {{mensaje}} </h3>
+
+{% endblock %}
+
